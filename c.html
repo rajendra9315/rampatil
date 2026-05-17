@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>RAM PATIL · Sureshot Channel</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      /* GLOWING / VIBRANT BACKGROUND — no dull black */
+      background: radial-gradient(circle at 10% 30%, #fbc2eb, #a6c1ee, #84fab0);
+      background-attachment: fixed;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', 'Poppins', 'Helvetica Neue', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.8rem;
+    }
+
+    /* main card — soft glassmorphism, light & premium */
+    .landing-flex {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      max-width: 540px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(2px);
+      border-radius: 2.5rem;
+      padding: 2.5rem 2rem 2rem 2rem;
+      box-shadow: 0 30px 45px -12px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255,255,255,0.5);
+      transition: transform 0.2s ease;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .landing-flex:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 35px 55px -15px rgba(0, 0, 0, 0.25);
+    }
+
+    /* IMAGE LOGO BOX (rounded, with soft glow) */
+    .logo-box {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1.2rem;
+      border-radius: 32px;
+      overflow: hidden;
+      background: linear-gradient(145deg, #ffffff, #f0f2fa);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 22px -8px rgba(0, 0, 0, 0.15), inset 0 1px 0 white;
+      border: 2px solid rgba(42, 171, 238, 0.5);
+    }
+
+    .logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* CHANNEL NAME — premium gradient text (taken from your second code) */
+    .channel-name {
+      font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #0F2B3D, #2A7FAA, #9B4D96);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-align: center;
+      margin-bottom: 2rem;
+      padding: 0 0.5rem;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    /* BUTTON STACK — two rows, rectangular, modern (exactly from your reference) */
+    .button-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      width: 100%;
+      margin: 0.5rem 0 0.5rem 0;
+    }
+
+    /* rectangular button style (premium, modern) */
+    .tg-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #1e293b;
+      border: none;
+      border-radius: 18px;
+      padding: 1rem 1.6rem;
+      width: 100%;
+      font-size: 1.1rem;
+      font-weight: 600;
+      font-family: 'Inter', system-ui, sans-serif;
+      letter-spacing: 0.3px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Button 1: Telegram channel (blue gradient) */
+    .btn-telegram {
+      background: linear-gradient(105deg, #2AABEE, #1686D1);
+    }
+
+    /* Button 2: VIP / Sureshot channel (premium purple/pink) */
+    .btn-vip {
+      background: linear-gradient(115deg, #B8459E, #8E2C72);
+      box-shadow: 0 8px 18px rgba(142, 44, 114, 0.25);
+    }
+
+    .tg-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 24px -8px rgba(0, 0, 0, 0.2);
+      filter: brightness(1.02);
+    }
+
+    .tg-btn:active {
+      transform: translateY(2px);
+      transition: 0.05s;
+    }
+
+    /* Telegram icon SVG (consistent on both buttons) */
+    .telegram-icon {
+      width: 22px;
+      height: 22px;
+      display: inline-block;
+      fill: none;
+      stroke: white;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* FOOTER small text — “Ads Managed By Aadi Bhai” */
+    .footer-note {
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #3b4e6e;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      padding-top: 1.4rem;
+      width: 100%;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+    }
+
+    .footer-note span {
+      background: rgba(42, 171, 238, 0.1);
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+      display: inline-block;
+    }
+
+    /* responsive */
+    @media (max-width: 520px) {
+      .landing-flex {
+        padding: 1.8rem 1.2rem 1.5rem 1.2rem;
+        border-radius: 2rem;
+      }
+      .logo-box {
+        width: 95px;
+        height: 95px;
+        border-radius: 26px;
+      }
+      .channel-name {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+      }
+      .tg-btn {
+        padding: 0.85rem 1rem;
+        font-size: 1rem;
+        gap: 10px;
+      }
+      .telegram-icon {
+        width: 20px;
+        height: 20px;
+      }
+      .footer-note {
+        margin-top: 2rem;
+        font-size: 0.68rem;
+      }
+    }
+
+    /* focus ring */
+    .tg-btn:focus-visible {
+      outline: 3px solid #FFB74D;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="landing-flex">
+    <!-- IMAGE LOGO BOX (clean, modern icon) -->
+    <div class="logo-box">
+      <!-- Using a high-quality Telegram-inspired icon / bot logo — fast, no external heavy images -->
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 80%; height: 80%; display: block; margin: auto;">
+        <rect width="100" height="100" rx="28" fill="url(#gradLogo)" />
+        <defs>
+          <linearGradient id="gradLogo" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#2AABEE" />
+            <stop offset="100%" stop-color="#8E2C72" />
+          </linearGradient>
+        </defs>
+        <path d="M38 42 L62 38 L56 62 L48 54 L40 66 L42 52 L36 44 L38 42Z" fill="white" fill-opacity="0.96" />
+        <path d="M48 50 L44 56 L50 58 L54 54 L48 50Z" fill="#FFD966" />
+        <circle cx="32" cy="36" r="2.5" fill="#FFE484" />
+        <circle cx="68" cy="58" r="2.5" fill="#FFE484" />
+      </svg>
+    </div>
+
+    <!-- CHANNEL NAME (exactly as in your reference: RAM PATIL NUMBER SURESHOT + premium font) -->
+    <div class="channel-name">
+      RAM PATIL NUMBER SURESHOT
+    </div>
+
+    <!-- TWO BUTTONS IN DIFFERENT ROWS — taken from your second code (design, icons, hover) -->
+    <div class="button-stack">
+      <!-- Button 1: Join Telegram Now (Telegram channel link) -->
+      <a class="tg-btn btn-telegram" href="https://t.me/Adii_x_Traderbot" target="_blank" rel="noopener noreferrer">
+        <svg class="telegram-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 13L21 21" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        Join Telegram Now
+      </a>
+
+      <!-- Button 2: Join VIP Channel (VIP / Sureshot channel) -->
+      <a class="tg-btn btn-vip" href="https://t.me/SureShotChannel" target="_blank" rel="noopener noreferrer">
+        <svg class="telegram-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11 13L21 21" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        Join VIP Channel
+      </a>
+    </div>
+
+    <!-- FOOTER (Ads Managed By Aadi Bhai) -->
+    <div class="footer-note">
+      <span>📢 Ads Managed By Aadi Bhai</span>
+    </div>
+  </div>
+</body>
+</html>
